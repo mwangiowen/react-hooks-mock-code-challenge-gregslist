@@ -1,12 +1,13 @@
 // Search.js
 import React, { useState } from "react";
 
-function Search() {
+function Search({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    // Call the onSearch callback with the current search query
+    onSearch(searchQuery);
   };
 
   return (
